@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>The table where the trigger layers are registered and can be deactivated.</description>
+    <fields>
+        <fullName>Apex_Class__c</fullName>
+        <description>The name of the Apex class with the layer implementation.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Apex Class</label>
+        <length>40</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Context__c</fullName>
+        <description>The context of the layer.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Context</label>
+        <required>true</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>BEFORE_INSERT</fullName>
+                    <default>false</default>
+                    <label>before insert</label>
+                </value>
+                <value>
+                    <fullName>BEFORE_UPDATE</fullName>
+                    <default>false</default>
+                    <label>before update</label>
+                </value>
+                <value>
+                    <fullName>BEFORE_DELETE</fullName>
+                    <default>false</default>
+                    <label>before delete</label>
+                </value>
+                <value>
+                    <fullName>AFTER_INSERT</fullName>
+                    <default>false</default>
+                    <label>after insert</label>
+                </value>
+                <value>
+                    <fullName>AFTER_UPDATE</fullName>
+                    <default>false</default>
+                    <label>after update</label>
+                </value>
+                <value>
+                    <fullName>AFTER_DELETE</fullName>
+                    <default>false</default>
+                    <label>after delete</label>
+                </value>
+                <value>
+                    <fullName>AFTER_UNDELETE</fullName>
+                    <default>false</default>
+                    <label>after undelete</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Description__c</fullName>
+        <description>Description of the trigger layer.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Description</label>
+        <required>true</required>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Execution_Order__c</fullName>
+        <description>An integer indicating when the layer runs. 1 if for the first layer, 2 for the second...</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Execution Order</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Object__c</fullName>
+        <description>The object on which the layer runs.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Object</label>
+        <length>50</length>
+        <required>true</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>is_Active__c</fullName>
+        <defaultValue>true</defaultValue>
+        <description>A flag that allows the activate/deactivate the layer.</description>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>is Active</label>
+        <type>Checkbox</type>
+    </fields>
+    <label>Trigger Layer Table</label>
+    <listViews>
+        <fullName>Complete</fullName>
+        <columns>MasterLabel</columns>
+        <columns>DeveloperName</columns>
+        <columns>Apex_Class__c</columns>
+        <columns>Object__c</columns>
+        <columns>Context__c</columns>
+        <columns>is_Active__c</columns>
+        <columns>Execution_Order__c</columns>
+        <columns>Description__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>Complete</label>
+    </listViews>
+    <pluralLabel>Trigger Layer Tables</pluralLabel>
+    <validationRules>
+        <fullName>Execution_Order_Greater_than_zero</fullName>
+        <active>true</active>
+        <description>It ensures the execution order is greater than zero.</description>
+        <errorConditionFormula>Execution_Order__c &lt;= 0</errorConditionFormula>
+        <errorDisplayField>Execution_Order__c</errorDisplayField>
+        <errorMessage>Type an integer greater than zero.</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>
