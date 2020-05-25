@@ -7,19 +7,17 @@ public abstract class TriggerLayer
 
     protected Map<Id, SObject> newMap;
 
+    protected List<SObject> oldList;
+
+    protected List<SObject> newList;
+
     public TriggerLayer(){}
 
-    public TriggerLayer(Map<Id, SObject> oldMap, Map<Id, SObject> newMap) {
-        this.oldMap = oldMap;
-        this.newMap = newMap;
-    }
-
-    public void setOldMap(Map<Id, SObject> oldMap) {
-        this.oldMap = oldMap;
-    }
-
-    public void setNewMap(Map<Id, SObject> newMap) {
-        this.newMap = newMap;
+    public void init (Map<Id, SObject> oldMap, Map<Id, SObject> newMap, List<SObject> oldList, List<SObject> newList) {
+        this.oldMap  = oldMap;
+        this.newMap  = newMap;
+        this.oldList = oldList;
+        this.newList = newList;
     }
 
     /*

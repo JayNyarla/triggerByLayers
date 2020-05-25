@@ -31,8 +31,7 @@ public class TriggerHandler
                 try {
                     // Istantiate the proper class by the class field of the record of the custom metadata
                     TriggerLayer tl = (TriggerLayer) Type.forName(tlRecord.Apex_Class__c).newInstance();
-                    tl.setOldMap(Trigger.oldMap);
-                    tl.setNewMap(Trigger.newMap);
+                    tl.init(Trigger.oldMap, Trigger.newMap, Trigger.old, Trigger.new);
                     try {
                         tl.setupAndExecute();
                     } catch(Exception e) {
