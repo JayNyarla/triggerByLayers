@@ -1,6 +1,3 @@
-/*
-*   This class is a simple example to test the package triggerByLayers.
-*/
 public without sharing class ExampleObjName extends TriggerLayer {
 
     public override void setup() {
