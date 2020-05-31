@@ -1,4 +1,5 @@
+![facebook_cover_photo_2](https://user-images.githubusercontent.com/57491831/83346993-ca35e780-a321-11ea-9bad-a064c5efe10e.png)
 # triggerByLayers
 Easy and efficient trigger architecture.
 
-Documentation and getting started available at [wiki](https://github.com/JayNyarla/triggerByLayers/wiki).
+Read the documentation and get started at [wiki](https://github.com/JayNyarla/triggerByLayers/wiki).
